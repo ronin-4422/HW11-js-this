@@ -18,28 +18,31 @@ counter.up();
 console.log(counter.showStep());
 
 
-function calculator() {
-	
-	this.sum = function(num1, num2) {
-		return num1+num2;
+function Calculator(a, b) {
+	this.a = a;
+  this.b = b;
+	this.sum = function() {
+		return this.a + this.b;
 	};
-	
-	this.multiply = function(num1, num2) {
-		return num1*num2;
-	};
-	
-	this.subtract = function(num1, num2) {
-		return num1-num2;
-	};
-  
-  this.divide = function(num1, num2) {
-		return num1/num2;
-	};
+
+  this.multiply = function() {
+    return this.a * this.b;
+  };
+
+  this.subtract = function() {
+    return this.a - this.b;
+  };
+
+  this.divide = function() {
+    return this.a / this.b;
+  };
 }
+let calcSum = new Calculator(8, 3);
+let calcMul = new Calculator(10, 3);
+let calcSub = new Calculator(35, 20);
+let calcDiv = new Calculator(4, 3);
 
-let calc = new calculator();
-
-console.log(calc.sum(8,3)); //11
-console.log(calc.multiply(10,3)); //30
-console.log(calc.subtract(35,20)); //15
-console.log(calc.divide(4,3)); //1.3333333333333333
+console.log(calcSum.sum());
+console.log(calcMul.multiply()); 
+console.log(calcSub.subtract()); 
+console.log(calcDiv.divide());
